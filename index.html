@@ -6,29 +6,61 @@
     <title>Mapping Malaysia</title>
     <style>
         body {
-            background-color: #fdf6e3; /* Solarized Light base color */
+            background-color: #fdf6e3;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             font-family: Arial, sans-serif;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            box-sizing: border-box;
         }
+
         h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: clamp(32px, 10vw, 48px); /* Scales between 32px and 48px */
+            margin-bottom: 1rem;
+            text-align: center;
         }
+
         p {
-            font-size: 18px;
+            font-size: clamp(16px, 4vw, 18px); /* Scales between 16px and 18px */
             max-width: 600px;
             text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #268bd2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            img {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <img source src="cover.png" type="" width="350px"/>
+    <img src="cover.png" alt="Mapping Malaysia Cover" width="350">
     <h1>Mapping Malaysia</h1>
     <p>Welcome to Mapping Malaysia, a podcast exploring the stories, culture, and landscapes of a people and a place.</p>
     <p>Stay tuned for our first episode.</p>
